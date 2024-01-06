@@ -39,6 +39,8 @@ android {
 
     }
 
+
+
 }
 
 dependencies {
@@ -50,4 +52,16 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //coil manejo de imagenes
+    implementation("io.coil-kt:coil:2.5.0")
+
+    //solicitud de permisos
+
+
+    implementation ("androidx.activity:activity-ktx:1.6.1")
+    implementation ("androidx.fragment:fragment-ktx:1.5.5")
+
+    debugImplementation ("androidx.fragment:fragment-testing:1.5.5")
+
 }

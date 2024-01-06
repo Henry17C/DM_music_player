@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -15,19 +20,25 @@
         android:theme="@style/Theme.MusicPlayer"
         tools:targetApi="31">
         <activity
-            android:name=".ui.SignUpActivity"
+            android:name=".PracticActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SignInActivity"
+            android:name=".ui.activities.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.StartActivity"
+            android:name=".ui.activities.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.FirstActivity"
+            android:name=".ui.activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PrincipalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

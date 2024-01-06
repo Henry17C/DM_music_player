@@ -1,4 +1,4 @@
-package com.coyago.musicplayer.ui
+package com.coyago.musicplayer.ui.activities
 
 // MainActivity.kt
 import android.content.pm.PackageManager

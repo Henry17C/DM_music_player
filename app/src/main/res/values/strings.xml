@@ -15,6 +15,7 @@
     <string name="stng_sign_in_m5">Iniciar sesión</string>
     <string name="stng_sign_in_m6">¿Aún no estás en ZenTunes?</string>
     <string name="stng_sign_in_m7">Regístrate</string>
+    <string name="stng_sign_in_m8">Continuar como invitado</string>
 
     //Screen Singn up
 
@@ -29,6 +30,13 @@
     <string name="stng_sign_up_m9">¿Ya tienes cuenta?</string>
     <string name="stng_sign_up_m10">Iniciar</string>
 
+    //navigation bar
+
+    <string name="stng_nb1">Inicio</string>
+    <string name="stng_nb2">Música</string>
+    <string name="stng_nb3">Buscar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

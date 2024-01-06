@@ -7,7 +7,7 @@
     android:background="@color/black"
 
 
-    tools:context=".ui.StartActivity">
+    tools:context=".ui.activities.StartActivity">
 
 
     <TextView
@@ -46,29 +46,43 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
         android:layout_marginBottom="220dp"
-        android:orientation="vertical"
 
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-       >
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btn_iniciar_sesion"
             style="@style/button_style"
-            android:text="Iniciar sesión"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Iniciar sesión" />
 
         <Button
             android:id="@+id/btn_registrate"
             style="@style/button_style"
+            android:layout_marginBottom="10dp"
             android:text="Regístarte" />
+
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_invitado"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/stng_sign_in_m8"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

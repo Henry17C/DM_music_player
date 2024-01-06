@@ -1,11 +1,9 @@
-package com.coyago.musicplayer.ui
+package com.coyago.musicplayer.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.coyago.musicplayer.R
 import com.coyago.musicplayer.databinding.ActivitySignUpBinding
-import com.coyago.musicplayer.databinding.ActivityStartBinding
 
 class SignUpActivity : AppCompatActivity() {
 
