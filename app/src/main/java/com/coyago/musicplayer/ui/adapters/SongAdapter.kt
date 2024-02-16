@@ -1,5 +1,6 @@
 package com.coyago.musicplayer.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,13 +22,21 @@ class SongAdapter (private val listSongs:List<Song>): RecyclerView.Adapter<SongA
         private var binding: SongItemsBinding= SongItemsBinding.bind(view)
 
         fun render(item:Song){
-            binding.imageView.load("https://previews.123rf.com/images/bahtiarmaulana/bahtiarmaulana2204/bahtiarmaulana220400040/185159316-rebanada-de-dibujos-animados-de-pizza-ilustraci%C3%B3n-de-dibujos-animados-vectoriales-im%C3%A1genes.jpg"){
-                crossfade(true)
-                placeholder(R.drawable.image)
-                transformations(CircleCropTransformation())
+           // binding.imageView.load("https://previews.123rf.com/images/bahtiarmaulana/bahtiarmaulana2204/bahtiarmaulana220400040/185159316-rebanada-de-dibujos-animados-de-pizza-ilustraci%C3%B3n-de-dibujos-animados-vectoriales-im%C3%A1genes.jpg"){
+
+            Log.d("ImageLoading", "URI de carátula del álbum: ${item.albumArtUri}")
+
+            try {
+                binding.imageView.load(item.albumArtUri.toString()) {
+                    crossfade(true)
+                    placeholder(R.drawable.image)
+                    transformations(CircleCropTransformation())
+                }
+            } catch (e: Exception) {
+                Log.e("ImageLoading", "Error al cargar la imagen: ${e.message}")
             }
             binding.txtArtist.text=item.artist.toString()
-            binding.txtTitle.text=item.artist.toString()
+            binding.txtTitle.text=item.title.toString()
 
         }
 

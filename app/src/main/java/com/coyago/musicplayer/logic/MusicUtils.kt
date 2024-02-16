@@ -19,7 +19,8 @@ class MusicUtils(private val context: Context) {
             MediaStore.Audio.Media.ARTIST,
             MediaStore.Audio.Media.ALBUM,
             MediaStore.Audio.Media.DURATION,
-            MediaStore.Audio.Media.DATA
+            MediaStore.Audio.Media.DATA,
+            MediaStore.Audio.Media.ALBUM_ID
         )
 
         // Obtener el ContentResolver
@@ -42,6 +43,7 @@ class MusicUtils(private val context: Context) {
             val albumColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM)
             val durationColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
             val dataColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
+            val albumIdColumn = c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID)
 
             while (c.moveToNext()) {
                 val id = c.getLong(idColumn)
@@ -50,6 +52,8 @@ class MusicUtils(private val context: Context) {
                 val album = c.getString(albumColumn)
                 val duration = c.getLong(durationColumn)
                 val data = c.getString(dataColumn)
+                val albumId=c.getLong(albumIdColumn)
+                val albumArtUri: Uri = Uri.parse("content://media/external/audio/albumart/$albumId")
 
                 // Verificar que la extensión sea .mp3
                 if (data.endsWith(".mp3", ignoreCase = true)) {
@@ -58,7 +62,7 @@ class MusicUtils(private val context: Context) {
                         id
                     )
 
-                    val song = Song(id, title, artist, album, duration, data, contentUri)
+                    val song = Song(id, title, artist, album, duration, data, contentUri,albumArtUri )
                     songs.add(song)
                 }
             }
@@ -75,5 +79,6 @@ data class Song(
     val album: String,
     val duration: Long,
     val data: String,
-    val contentUri: Uri
+    val contentUri: Uri,
+    val albumArtUri: Uri
 )

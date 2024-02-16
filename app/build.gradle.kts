@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("com.google.devtools.ksp")
 }
 
 android {
@@ -56,12 +57,28 @@ dependencies {
     //coil manejo de imagenes
     implementation("io.coil-kt:coil:2.5.0")
 
-    //solicitud de permisos
+    //solicitud de permisos de acceso a archivos de audio
 
 
     implementation ("androidx.activity:activity-ktx:1.6.1")
     implementation ("androidx.fragment:fragment-ktx:1.5.5")
 
     debugImplementation ("androidx.fragment:fragment-testing:1.5.5")
+
+    //cardView
+
+    implementation ("androidx.cardview:cardview:1.0.0")
+    //Room
+
+    implementation ("androidx.room:room-runtime:2.5.0")
+    annotationProcessor ("androidx.room:room-compiler:2.5.0")
+
+    // To use Kotlin Symbol Processing (KSP)
+    ksp ("androidx.room:room-compiler:2.5.0")
+
+
+
+
+
 
 }
